@@ -1,14 +1,16 @@
 package com.example.darknote.ui
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.darknote.R
 import com.example.darknote.data.Note
 import com.example.darknote.repositories.NoteRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MainViewModel @Inject constructor(
         private val repository: NoteRepository
 ) : ViewModel() {
 
