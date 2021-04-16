@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.darknote.data.Note
 
-class FakeShoppingRepository : NoteRepository {
+class FakeNoteRepository : NoteRepository {
 
     private val notes = mutableListOf<Note>()
 
