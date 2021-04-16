@@ -2,7 +2,10 @@ package com.example.darknote.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.darknote.data.NoteDao
 import com.example.darknote.data.NoteDatabase
+import com.example.darknote.repositories.DefaultNoteRepository
+import com.example.darknote.repositories.NoteRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,5 +28,11 @@ object AppModule {
     fun provideNoteDao(
         database: NoteDatabase
     ) = database.noteDao()
+
+    @Singleton
+    @Provides
+    fun providesDefaultNoteRepository(
+            dao: NoteDao
+    ) = DefaultNoteRepository(dao) as NoteRepository
 
 }
